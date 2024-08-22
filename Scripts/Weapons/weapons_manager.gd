@@ -25,7 +25,7 @@ var equiped_weapon: weapons
 
 var stored_weapon_equiped: int
 
-var stored_weapon_1: weapons = weapons.sword
+var stored_weapon_1: weapons = weapons.shield
 var stored_weapon_2: weapons = weapons.flame_thrower
 
 var primary_cooldown: float

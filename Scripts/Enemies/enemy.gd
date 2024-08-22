@@ -78,7 +78,7 @@ func _physics_process(delta: float) -> void:
 		if "type" in item:
 			if item.type == "enemy":
 				var collide_dir = (position - item.position).normalized()
-				item.velocity += -collide_dir * 2500# * delta
+				item.velocity += -collide_dir * 2500 * delta
 	
 	
 	#actual movement
