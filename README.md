@@ -2,12 +2,13 @@ A top down game where you fight against a swarm of enemys moving towards you usi
 
 Current Features:  
 Player  
-Weapons  
+Weapons (primary effects)  
 Enemies  
 
 To add:  
 Player damage  
 weapons selection  
+secondary weapon effects
 More to be decided  
 
 Current Weapons:  
