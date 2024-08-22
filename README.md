@@ -8,7 +8,8 @@ Enemies
 To add:  
 Player damage  
 weapons selection  
-secondary weapon effects
+secondary weapon effects  
+prevent enemys from spawning inside player  
 More to be decided  
 
 Current Weapons:  
