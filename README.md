@@ -6,7 +6,7 @@ Weapons
 Enemies  
 
 To add:  
-Player dammage  
+Player damage  
 weapons selection  
 More to be decided  
 
