@@ -22,6 +22,9 @@ func _process(delta: float) -> void:
 		var inst = enemy_1_prefab.instantiate()
 		inst.position.x = randf_range((-1000 + player.position.x), (1000 + player.position.x))
 		inst.position.y = randf_range((-1000 + player.position.y), (1000 + player.position.y))
+		while inst.position.distance_to(player.position) < 300.0:
+			inst.position.x = randf_range((-1000 + player.position.x), (1000 + player.position.x))
+			inst.position.y = randf_range((-1000 + player.position.y), (1000 + player.position.y))
 		
 		inst.player = player
 		owner.add_child(inst)

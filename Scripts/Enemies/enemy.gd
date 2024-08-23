@@ -12,6 +12,8 @@ var high_friction_vel: Vector2
 var max_speed: float = 750
 var speed: float = 250
 
+var damage_to_player: float = 50
+
 var direction
 
 var health := 600.0
@@ -115,3 +117,11 @@ func _draw() -> void:
 	if on_fire > 0:
 		draw_line(Vector2(-70, -80), Vector2((on_fire * 80) - 70, -80), Color.RED, 16)
 		draw_line(Vector2(-80, -50), Vector2(-80, -40), Color.RED, 16)
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if "type" in body:
+		if body.type == "player":
+			body._damage_player(damage_to_player)
+			var collide_dir = (position - body.position).normalized()
+			body.permanent_vel += -collide_dir * 250
