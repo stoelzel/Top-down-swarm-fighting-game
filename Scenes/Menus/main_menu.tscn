@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw3tk1b2xv5jn"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_nfpw6"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nfpw6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -33.0
+offset_right = 21.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "weapons:"
+fit_content = true
+autowrap_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Weapon 1" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+selected = 0
+item_count = 4
+popup/item_0/text = "Sword"
+popup/item_0/id = 1
+popup/item_1/text = "Shield"
+popup/item_1/id = 2
+popup/item_2/text = "Gun"
+popup/item_2/id = 3
+popup/item_3/text = "Flame thrower"
+popup/item_3/id = 4
+
+[node name="Weapon 2" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+selected = 0
+item_count = 4
+popup/item_0/text = "Sword"
+popup/item_0/id = 1
+popup/item_1/text = "Shield"
+popup/item_1/id = 2
+popup/item_2/text = "Gun"
+popup/item_2/id = 3
+popup/item_3/text = "Flame thrower"
+popup/item_3/id = 4
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/HBoxContainer/Weapon 1" to="." method="_on_weapon_1_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/HBoxContainer/Weapon 2" to="." method="_on_weapon_2_item_selected"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

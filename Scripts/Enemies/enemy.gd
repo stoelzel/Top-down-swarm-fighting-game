@@ -39,14 +39,13 @@ func _process(delta: float) -> void:
 				if stun_time < item.stun:
 					stun_time = item.stun
 			
-			if "effects" in item:
-				if "fire" in item.effects:
-					on_fire = 1.5
+			if "fire_inflict" in item:
+				on_fire = item.fire_inflict
 			health -= item.passive_damage * delta
 			_health_check()
 	
 	if on_fire > 0:
-		health -= 100 * delta
+		health -= 200 * delta
 		_health_check()
 
 func _physics_process(delta: float) -> void:
@@ -94,9 +93,8 @@ func _on_area_entered(area: Area2D) -> void:
 			if stun_time < area.stun:
 				stun_time = area.stun
 		
-		if "effects" in area:
-			if "fire" in area.effects:
-				on_fire = 1.5
+		if "fire_inflict" in area:
+			on_fire = area.fire_inflict
 		health -= area.damage
 		_health_check()
 		print(health)

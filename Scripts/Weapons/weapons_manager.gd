@@ -35,6 +35,8 @@ var direction
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	stored_weapon_1 = Singleton.weapon_1
+	stored_weapon_2 = Singleton.weapon_2
 	stored_weapon_equiped = 1
 
 

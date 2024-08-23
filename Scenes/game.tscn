@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ey4oxpmc67ey"]
+[gd_scene load_steps=10 format=3 uid="uid://ey4oxpmc67ey"]
 
 [ext_resource type="PackedScene" uid="uid://cmussoaoyjx5c" path="res://Scenes/player.tscn" id="1_frit7"]
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_lxf3j"]
 [ext_resource type="Script" path="res://Scripts/Weapons/weapons_manager.gd" id="2_72a5l"]
 [ext_resource type="PackedScene" uid="uid://c4cc7xsc6rnro" path="res://Scenes/Weapons/sword_swing.tscn" id="3_lqt6k"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_manager.gd" id="4_nmm0a"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://6fdmy884f5yj" path="res://Scenes/Weapons/flamethrower_fire.tscn" id="6_a32ee"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_lxf3j")
 
 [node name="Player" parent="." instance=ExtResource("1_frit7")]
 unique_name_in_owner = true

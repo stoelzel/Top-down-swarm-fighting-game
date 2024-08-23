@@ -4,7 +4,7 @@ var speed: float = 700.0
 var speed_fac: float
 
 var damage: float = 0.0
-var passive_damage: float = 300.0
+var passive_damage: float = 200.0
 var knockback: float = 0.0
 var stun: float = 0.0
 
@@ -13,7 +13,7 @@ var exist: bool = false
 
 var knockback_position: Vector2
 
-var effects: Array = ["fire"]
+var fire_inflict: float = 1.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

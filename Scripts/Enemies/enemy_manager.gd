@@ -4,16 +4,19 @@ extends Node2D
 
 @onready var player = %Player
 
+var active: bool = true
+
 var timer: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	timer += delta
+	if active == true:
+		timer += delta
 	if timer > 1:
 		timer = 0
 		var inst = enemy_1_prefab.instantiate()
