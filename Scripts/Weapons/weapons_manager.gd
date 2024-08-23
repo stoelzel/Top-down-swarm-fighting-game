@@ -142,7 +142,7 @@ func _draw() -> void:
 	match equiped_weapon:
 		weapons.gun:
 			if primary_cooldown < 0:
-				draw_line((player.global_position + Vector2(-60, 70)), (player.global_position + Vector2(((gun_ammo * 20) - 60), 70)), Color.GREEN, 16)
+				draw_line((player.global_position + Vector2(-60, -70)), (player.global_position + Vector2(((gun_ammo * 20) - 60), -70)), Color.GREEN, 16)
 		_:
 			pass
 	
