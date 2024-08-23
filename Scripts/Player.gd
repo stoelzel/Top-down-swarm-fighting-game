@@ -10,6 +10,8 @@ var move_vel := Vector2(0, 0)
 var health: float = 500.0
 
 func _physics_process(delta):
+	queue_redraw()
+	
 	velocity = Vector2(0, 0)
 
 	# Get the input direction and handle the movement/deceleration.
@@ -31,15 +33,18 @@ func _physics_process(delta):
 	if current_speed > max_speed:
 		move_vel = max_speed * move_vel.normalized()
 
-	permanent_vel -= (permanent_vel / 2) * delta
+	permanent_vel -= (permanent_vel / 1) * delta
 	
 	
 	#print(move_vel)
 	velocity = (move_vel + permanent_vel)
 	move_and_slide()
 	
-	if health < 0:
+	if health <= 0:
 		get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
 
 func _damage_player(damage: float) -> void:
 	health -= damage
+
+func _draw() -> void:
+	draw_line((Vector2(-60, 70)), (Vector2(((health * 0.2) - 60), 70)), Color.GREEN, 16)
