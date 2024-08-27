@@ -5,7 +5,7 @@ extends Node2D
 var weapons_manager: Node2D
 var player
 
-var ammo: float = 6
+var ammo: float = 2
 var primary_cooldown: float
 
 var game_object: Node2D
@@ -27,6 +27,9 @@ func _process(delta: float) -> void:
 	if !Input.is_action_pressed("primary_action") or weapons_manager.equiped_weapon != self:
 		ammo += delta
 	
+	if ammo > 2:
+		ammo = 2
+	
 	queue_redraw()
 
 
@@ -40,7 +43,6 @@ func _manager_add(stored_weapon):
 func _attack_primary(delta: float) -> void:
 	if primary_cooldown < 0:
 		if ammo > 0:
-			ammo -= delta
 			primary_cooldown = 0.1
 			var inst = prefab_1.instantiate()
 			inst.position = player.position
@@ -48,9 +50,11 @@ func _attack_primary(delta: float) -> void:
 			inst.rotation += deg_to_rad((-90 * randf_range(0.95, 1.05)))
 			inst.knockback_position = inst.position
 			game_object.add_child(inst)
+	if ammo > 0:
+		ammo -= delta
 
 
 func _draw() -> void:
 	if weapons_manager.equiped_weapon == self:
 		if player != null:
-			draw_line((player.global_position + Vector2(-60, -70)), (player.global_position + Vector2(((ammo * 20) - 60), -70)), Color.GREEN, 16)
+			draw_line((player.global_position + Vector2(-60, -70)), (player.global_position + Vector2(((ammo * 60) - 60), -70)), Color.GREEN, 16)
