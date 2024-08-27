@@ -20,6 +20,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var direction = (position - $Marker2D.global_position).normalized()
 	position += direction * delta * speed
+	knockback_position = position
 	
 	timer += delta
 	if timer > 10:

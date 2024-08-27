@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc06lf562frr6"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Weapon generators/gun_generator.gd" id="1_l8uo8"]
+[ext_resource type="PackedScene" uid="uid://cngutx6f2h66v" path="res://Scenes/Weapons/Weapon projectiles/gun_bullet.tscn" id="2_32xg5"]
+
+[node name="Gun generator" type="Node2D"]
+script = ExtResource("1_l8uo8")
+prefab_1 = ExtResource("2_32xg5")

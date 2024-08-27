@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://ey4oxpmc67ey"]
 
 [ext_resource type="PackedScene" uid="uid://cmussoaoyjx5c" path="res://Scenes/player.tscn" id="1_frit7"]
-[ext_resource type="Script" path="res://Scenes/game.gd" id="1_lxf3j"]
-[ext_resource type="Script" path="res://Scripts/Weapons/weapons_manager.gd" id="2_72a5l"]
-[ext_resource type="PackedScene" uid="uid://c4cc7xsc6rnro" path="res://Scenes/Weapons/sword_swing.tscn" id="3_lqt6k"]
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_lxf3j"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Weapon projectiles/weapons_manager.gd" id="2_72a5l"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_manager.gd" id="4_nmm0a"]
-[ext_resource type="PackedScene" uid="uid://oyvacjtne4w0" path="res://Scenes/Weapons/shield.tscn" id="4_vdb1h"]
 [ext_resource type="PackedScene" uid="uid://dmdf0cwm76n6h" path="res://Scenes/Enemies/enemy.tscn" id="5_1uf4e"]
-[ext_resource type="PackedScene" uid="uid://cngutx6f2h66v" path="res://Scenes/Weapons/gun_bullet.tscn" id="5_btq7b"]
-[ext_resource type="PackedScene" uid="uid://6fdmy884f5yj" path="res://Scenes/Weapons/flamethrower_fire.tscn" id="6_a32ee"]
+[ext_resource type="PackedScene" uid="uid://foy24m0o31ab" path="res://Scenes/Weapons/Weapons generators/shield_generator.tscn" id="5_33dmd"]
+[ext_resource type="PackedScene" uid="uid://bc06lf562frr6" path="res://Scenes/Weapons/Weapons generators/Gun_generator.tscn" id="6_21kyw"]
+[ext_resource type="PackedScene" uid="uid://oanfd7o51mo8" path="res://Scenes/Weapons/Weapons generators/Flame_thrower_generator.tscn" id="7_5wc7h"]
+[ext_resource type="PackedScene" uid="uid://6c07lsshnmsd" path="res://Scenes/Weapons/Weapons generators/sword_generator.tscn" id="8_6odf0"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lxf3j")
@@ -22,10 +22,10 @@ position_smoothing_enabled = true
 
 [node name="Weapons Manager" type="Node2D" parent="."]
 script = ExtResource("2_72a5l")
-sword_1_prefab = ExtResource("3_lqt6k")
-shield_1_prefab = ExtResource("4_vdb1h")
-gun_1_prefab = ExtResource("5_btq7b")
-fire_1_prefab = ExtResource("6_a32ee")
+sword_prefab = ExtResource("8_6odf0")
+shield_prefab = ExtResource("5_33dmd")
+gun_prefab = ExtResource("6_21kyw")
+fire_prefab = ExtResource("7_5wc7h")
 
 [node name="Enemy Manager" type="Node2D" parent="."]
 script = ExtResource("4_nmm0a")
