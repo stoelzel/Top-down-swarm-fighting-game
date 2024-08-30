@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cmussoaoyjx5c" path="res://Scenes/player.tscn" id="1_frit7"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_lxf3j"]
-[ext_resource type="Script" path="res://Scripts/Weapons/Weapon projectiles/weapons_manager.gd" id="2_72a5l"]
+[ext_resource type="Script" path="res://Scripts/Weapons/weapons_manager.gd" id="2_72a5l"]
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_manager.gd" id="4_nmm0a"]
 [ext_resource type="PackedScene" uid="uid://dmdf0cwm76n6h" path="res://Scenes/Enemies/enemy.tscn" id="5_1uf4e"]
 [ext_resource type="PackedScene" uid="uid://foy24m0o31ab" path="res://Scenes/Weapons/Weapons generators/shield_generator.tscn" id="5_33dmd"]

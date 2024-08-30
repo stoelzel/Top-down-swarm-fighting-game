@@ -57,8 +57,16 @@ func _process(delta: float) -> void:
 	
 	if stored_weapon_equiped == 1:
 		equiped_weapon = stored_weapon_1
+		if equiped_weapon.has_method("_attack_primary") == true:
+			equiped_weapon.player = player
+			equiped_weapon.game_object = owner
+			equiped_weapon.direction = (mouse_position - player.position).normalized()
 	elif stored_weapon_equiped == 2:
 		equiped_weapon = stored_weapon_2
+		if equiped_weapon.has_method("_attack_primary") == true:
+			equiped_weapon.player = player
+			equiped_weapon.game_object = owner
+			equiped_weapon.direction = (mouse_position - player.position).normalized()
 	
 	if Input.is_action_pressed("primary_action"):
 		if equiped_weapon != null:
@@ -70,10 +78,23 @@ func _process(delta: float) -> void:
 				equiped_weapon.direction = (mouse_position - player.position).normalized()
 				equiped_weapon._attack_primary(delta)
 	
+	if Input.is_action_pressed("secondary_action"):
+		if equiped_weapon != null:
+			if "mouse_position" in equiped_weapon:
+				equiped_weapon.mouse_position = mouse_position
+			if equiped_weapon.has_method("_attack_secondary") == true:
+				equiped_weapon.player = player
+				equiped_weapon.game_object = owner
+				equiped_weapon.direction = (mouse_position - player.position).normalized()
+				equiped_weapon._attack_secondary(delta)
+	
 	if Input.is_action_pressed("reload"):
 		if equiped_weapon != null:
 			if equiped_weapon.has_method("_reload") == true:
 				equiped_weapon._reload()
+	
+	
+	queue_redraw()
 
 
 func _create_weapon_generator(prefab, stored_weapon):
@@ -81,12 +102,9 @@ func _create_weapon_generator(prefab, stored_weapon):
 	inst.weapons_manager = self
 	inst._manager_add(stored_weapon)
 	add_child(inst)
-	
-	
-	queue_redraw()
 
 
-func _draw() -> void:
-	if equiped_weapon != null:
-		if equiped_weapon.primary_cooldown < 0:
-			draw_circle(player.global_position, 70, Color.AQUA, false, 5.0, false)
+#func _draw() -> void:
+#	if equiped_weapon != null:
+#		if equiped_weapon.primary_cooldown < 0:
+#			draw_circle(player.global_position, 70, Color.AQUA, false, 5.0, false)

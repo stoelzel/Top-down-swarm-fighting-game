@@ -34,15 +34,15 @@ func _process(delta: float) -> void:
 	
 	for item in objects_inside:
 		if "passive_damage" in item:
-			if "knockback" in item:
+			if "passive_knockback" in item:
 				var knock_dir = (position - item.knockback_position).normalized()
-				velocity += knock_dir * item.knockback * delta
+				velocity += knock_dir * item.passive_knockback * delta
 			if "stun" in item:
 				if stun_time < item.stun:
 					stun_time = item.stun
 			
-			if "fire_inflict" in item:
-				on_fire = item.fire_inflict
+			if "passive_fire_inflict" in item:
+				on_fire = item.passive_fire_inflict
 			health -= item.passive_damage * delta
 			_health_check()
 	

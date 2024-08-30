@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://6c07lsshnmsd"]
+[gd_scene load_steps=4 format=3 uid="uid://6c07lsshnmsd"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/Weapon generators/sword_generator.gd" id="1_d3paj"]
-[ext_resource type="PackedScene" uid="uid://c4cc7xsc6rnro" path="res://Scenes/Weapons/Weapon projectiles/sword_swing.tscn" id="2_qjby5"]
+[ext_resource type="PackedScene" uid="uid://c4cc7xsc6rnro" path="res://Scenes/Weapons/Weapon projectiles/Primary/sword_swing.tscn" id="2_qjby5"]
+[ext_resource type="PackedScene" uid="uid://b2157c3nrxkkm" path="res://Scenes/Weapons/Weapon projectiles/Secondary/sword_swing_secondary.tscn" id="3_08ce2"]
 
 [node name="Sword generator" type="Node2D"]
 script = ExtResource("1_d3paj")
 prefab_1 = ExtResource("2_qjby5")
+prefab_2 = ExtResource("3_08ce2")

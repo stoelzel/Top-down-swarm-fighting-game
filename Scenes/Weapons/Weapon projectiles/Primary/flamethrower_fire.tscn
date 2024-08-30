@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://6fdmy884f5yj"]
 
-[ext_resource type="Script" path="res://Scripts/Weapons/Weapon projectiles/flamethrower_fire.gd" id="1_2rcag"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Weapon projectiles/Primary/flamethrower_fire.gd" id="1_2rcag"]
 [ext_resource type="Texture2D" uid="uid://moeoecj3wcgm" path="res://Assets/icon.svg" id="2_cqyp8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eknoa"]

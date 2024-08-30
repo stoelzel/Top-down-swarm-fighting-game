@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://oanfd7o51mo8"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/Weapon generators/flame_thrower_generator.gd" id="1_bn5y1"]
-[ext_resource type="PackedScene" uid="uid://6fdmy884f5yj" path="res://Scenes/Weapons/Weapon projectiles/flamethrower_fire.tscn" id="2_ev1bw"]
+[ext_resource type="PackedScene" uid="uid://6fdmy884f5yj" path="res://Scenes/Weapons/Weapon projectiles/Primary/flamethrower_fire.tscn" id="2_ev1bw"]
 
 [node name="Gun generator" type="Node2D"]
 script = ExtResource("1_bn5y1")

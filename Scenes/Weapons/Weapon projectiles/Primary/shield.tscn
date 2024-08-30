@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://oyvacjtne4w0"]
 
-[ext_resource type="Script" path="res://Scripts/Weapons/Weapon projectiles/shield.gd" id="1_kota2"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Weapon projectiles/Primary/shield.gd" id="1_kota2"]
 [ext_resource type="Texture2D" uid="uid://moeoecj3wcgm" path="res://Assets/icon.svg" id="2_unoiv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eknoa"]

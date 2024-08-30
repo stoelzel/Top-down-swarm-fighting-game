@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://3qgui1xw5ke1"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Weapon projectiles/Secondary/gun_bullet_secondary.gd" id="1_ypu7t"]
+[ext_resource type="PackedScene" uid="uid://d2ln8lbs1kkqn" path="res://Scenes/Weapons/Weapon projectiles/Secondary/bullet_explosion.tscn" id="2_xkj0d"]
+[ext_resource type="Texture2D" uid="uid://moeoecj3wcgm" path="res://Assets/icon.svg" id="3_ubic4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eknoa"]
+size = Vector2(40, 80)
+
+[node name="Gun Bullet" type="Area2D"]
+script = ExtResource("1_ypu7t")
+prefab_1 = ExtResource("2_xkj0d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.375, 0.75)
+texture = ExtResource("3_ubic4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eknoa")
+
+[node name="Marker2D" type="Node2D" parent="."]
+position = Vector2(0, -50)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

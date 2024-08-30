@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2157c3nrxkkm"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Weapon projectiles/Secondary/sword_swing_secondary.gd" id="1_f1v6p"]
+[ext_resource type="Texture2D" uid="uid://moeoecj3wcgm" path="res://Assets/icon.svg" id="2_anyhb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eknoa"]
+
+[node name="Sword Swing" type="Area2D"]
+script = ExtResource("1_f1v6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -100)
+scale = Vector2(2, 1)
+texture = ExtResource("2_anyhb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -100)
+scale = Vector2(12, 6)
+shape = SubResource("RectangleShape2D_eknoa")

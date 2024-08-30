@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://foy24m0o31ab"]
+[gd_scene load_steps=4 format=3 uid="uid://foy24m0o31ab"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/Weapon generators/shield_generator.gd" id="1_x7kdv"]
-[ext_resource type="PackedScene" uid="uid://oyvacjtne4w0" path="res://Scenes/Weapons/Weapon projectiles/shield.tscn" id="2_5bv1f"]
+[ext_resource type="PackedScene" uid="uid://oyvacjtne4w0" path="res://Scenes/Weapons/Weapon projectiles/Primary/shield.tscn" id="2_5bv1f"]
+[ext_resource type="PackedScene" uid="uid://dpihw3qft6aeh" path="res://Scenes/Weapons/Weapon projectiles/Secondary/shield_secondary.tscn" id="3_alniv"]
 
 [node name="Shield generator" type="Node2D"]
 script = ExtResource("1_x7kdv")
 prefab_1 = ExtResource("2_5bv1f")
+prefab_2 = ExtResource("3_alniv")
